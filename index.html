@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Very small top of head react manually</title>
+        <style>
+            body {
+                margin: 25px; 
+                background-color:bisque; 
+                font-family:Verdana, Geneva, Tahoma, sans-serif
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to worlds smallest react app</h1>
+        <h2>No Webpack, No JSX, No Building, No external JS or CSS files</h2>
+        <div id="root"></div>
+
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>        
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>            
+
+        <script>
+            console.log('Start Small standalone react');
+
+            class Paul extends React.Component {
+                render() {
+                    return React.createElement('div', null, `Hello ${this.props.name}`);                    
+                }
+            }
+
+            const root = document.getElementById('root');
+            ReactDOM.render(
+                React.createElement(Paul, { name: 'React World!' }, null),
+                root);            
+        </script>
+
+    </body>
+</html>
